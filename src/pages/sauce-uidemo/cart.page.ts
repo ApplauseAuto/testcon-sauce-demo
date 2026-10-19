@@ -7,10 +7,10 @@ export class CartPage extends BasePage {
   }
 
   get checkoutButton(): Locator {
-    return this.page.locator('button:has-text(\'Checkout\')').or(this.page.locator('#checkout')).or(this.page.locator('[data-test=\'checkout\']'));
+    return this.page.locator('button:has-text(\'Checkout\')').or(this.page.locator('[data-test=\'checkout\']')).or(this.page.locator('#checkout'));
   }
 
-  /** Clicking Checkout button to proceed to the checkout information step. */
+  /** Clicking Checkout to proceed to the checkout information page. */
   async clickCheckout(): Promise<void> {
     await this.checkoutButton.click();
   }

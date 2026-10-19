@@ -7,7 +7,7 @@ export class CheckoutOverviewPage extends BasePage {
   }
 
   get finishButton(): Locator {
-    return this.page.locator('button:has-text(\'Finish\')').or(this.page.locator('[data-test=\'finish\']')).or(this.page.locator('#finish'));
+    return this.page.locator('button:has-text(\'Finish\')').or(this.page.locator('[data-test=\'finish\']')).or(this.page.locator('role=button[name="Finish"]'));
   }
 
   /** Clicking the Finish button to complete the checkout process. */

@@ -9,7 +9,7 @@ on:
       suite:
         description: Suite tag to run (Playwright --grep @<suite>)
         type: string
-        default: swag-labs
+        default: sauce-uidemo
       browser:
         description: Browser project to run (must be enabled in customer.config browsers)
         type: choice
@@ -36,7 +36,7 @@ jobs:
     timeout-minutes: 60
     environment: ${{ inputs.env_profile || 'test' }}
     env:
-      RUN_SUITE: ${{ inputs.suite || 'swag-labs' }}
+      RUN_SUITE: ${{ inputs.suite || 'sauce-uidemo' }}
       RUN_BROWSER: ${{ inputs.browser || 'desktop-chrome' }}
       CI: 'true'
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -48,7 +48,7 @@ jobs:
       GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
       MAILOSAUR_API_KEY: ${{ secrets.MAILOSAUR_API_KEY }}
       MAILOSAUR_SERVER_ID: ${{ secrets.MAILOSAUR_SERVER_ID }}
-      URL: ${{ vars.URL }}
+      BASE_URL: ${{ vars.BASE_URL }}
       TEST_USERNAME: ${{ vars.TEST_USERNAME }}
       TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
     steps:
