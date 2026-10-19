@@ -1,0 +1,10 @@
+node_modules/
+dist/
+playwright-report/
+allure-results/
+allure-report/
+test-results/
+.auth/
+pnpm-lock.yaml
+.remember/
+planning/

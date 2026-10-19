@@ -1,0 +1,172 @@
+# =============================================================================
+# Applause Playwright Skeleton — .gitignore
+# =============================================================================
+# Layered: project-specific rules at the top, then generic Node/TS/IDE/OS.
+# Everything secret-bearing is excluded; only `.example` templates are tracked.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Secrets & credentials
+# -----------------------------------------------------------------------------
+# Environment files — only `.env.<tier>.example` templates are committed.
+.env
+.env.*
+!.env.*.example
+
+# Per-worker authenticated storage state written by src/setup/auth.setup.ts.
+.auth/
+!.auth/.gitkeep
+
+# Local native app builds (`APP_ANDROID_PATH`/`APP_IOS_PATH` in
+# .env.<tier>.example both default to ./apps/*) — never commit a customer's
+# app binary into the skeleton fork.
+/apps/
+
+# Local-only credential / token files some teams drop in by habit.
+credentials.json
+credentials.*.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+secrets.yaml
+secrets.yml
+secrets.json
+.npmrc.local
+.pypirc
+
+# Cloud / vendor CLI caches that can carry tokens.
+.aws/
+.terraform/
+.terraformrc
+*.tfvars
+!*.tfvars.example
+.vault-token
+.netrc
+
+# -----------------------------------------------------------------------------
+# Test & build artifacts
+# -----------------------------------------------------------------------------
+# Playwright outputs
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Allure
+allure-results/
+allure-report/
+
+# Vitest / Jest coverage
+coverage/
+.nyc_output/
+
+# Build output
+dist/
+build/
+out/
+.next/
+.nuxt/
+.svelte-kit/
+.turbo/
+.cache/
+.parcel-cache/
+.vite/
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+
+# -----------------------------------------------------------------------------
+# Dependencies & package managers
+# -----------------------------------------------------------------------------
+node_modules/
+jspm_packages/
+bower_components/
+
+# pnpm
+.pnpm-store/
+.pnpm-debug.log*
+
+# npm / yarn
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# yarn 2+ (zero-installs not used here)
+.yarn/cache
+.yarn/install-state.gz
+.yarn/build-state.yml
+.yarn/unplugged
+.pnp.*
+
+# Package tarballs
+*.tgz
+*.tar
+*.tar.gz
+*.zip
+
+# -----------------------------------------------------------------------------
+# Logs & runtime
+# -----------------------------------------------------------------------------
+logs/
+*.log
+*.log.*
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# -----------------------------------------------------------------------------
+# IDE / editor metadata
+# -----------------------------------------------------------------------------
+# VS Code — keep launch / extensions / settings if a team wants to share them
+# in a follow-up commit; everything else is personal.
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+# JetBrains
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Vim / Emacs / Sublime / Cursor / Zed
+*.swp
+*.swo
+*.swn
+*~
+.\#*
+\#*\#
+*.sublime-workspace
+.cursor/
+.zed/
+
+# VS Code Local History extension
+.local-history/
+
+# Git merge / rebase artifacts
+*.orig
+*.rej
+
+# -----------------------------------------------------------------------------
+# OS metadata
+# -----------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Generic scratch dirs developers often create.
+scratch/
+tmp/
+.tmp/
